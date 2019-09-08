@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/chicken-translate-app/static/js/main.52a9b343.chunk.js",
+    "main.js.map": "/chicken-translate-app/static/js/main.52a9b343.chunk.js.map",
+    "runtime~main.js": "/chicken-translate-app/static/js/runtime~main.f02cb74d.js",
+    "runtime~main.js.map": "/chicken-translate-app/static/js/runtime~main.f02cb74d.js.map",
+    "static/js/2.d8d6047c.chunk.js": "/chicken-translate-app/static/js/2.d8d6047c.chunk.js",
+    "static/js/2.d8d6047c.chunk.js.map": "/chicken-translate-app/static/js/2.d8d6047c.chunk.js.map",
+    "index.html": "/chicken-translate-app/index.html",
+    "precache-manifest.afd5c7569d1c6d8ff2e3ba0ec8ac1397.js": "/chicken-translate-app/precache-manifest.afd5c7569d1c6d8ff2e3ba0ec8ac1397.js",
+    "service-worker.js": "/chicken-translate-app/service-worker.js"
+  }
+}
