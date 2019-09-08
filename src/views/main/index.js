@@ -1,55 +1,63 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import lemons from 'assets/img/lemons.png';
-import lemonade from 'assets/img/lemonade.png';
-import { clickButton, resetState } from './actions';
 import {
-  Button,
   Container,
-  ImgContainer,
-  InstructionsContainer,
-  Title
+  InputContainerHelpInfo,
+  Input,
+  InputContainer,
+  TextContainer,
+  TextResultInfo,
+  TextResult
 } from './styles';
 
 class Main extends Component {
   state = {
-    img: lemons
+    input: '',
+    chicken: '',
+    invisibleValue: ''
   };
 
-  componentDidMount() {
-    this.props.resetState();
-  }
-
   render() {
-    const {
-      clickButton,
-      main: { buttonClick }
-    } = this.props;
-
     return (
       <Container>
-        <InstructionsContainer>
-          <Title>When life gives you lemons...</Title>
-          <Button onClick={() => clickButton()}>Make lemonade!</Button>
-        </InstructionsContainer>
-        <ImgContainer>
-          <img src={buttonClick ? lemonade : lemons} alt="" width="200px" />
-        </ImgContainer>
+        <InputContainerHelpInfo>
+          <InputContainer>
+            <h1>
+              <span role="img" aria-label="Pointing Down">
+                👇
+              </span>{' '}
+              Type here{' '}
+              <span role="img" aria-label="Pointing Down">
+                👇
+              </span>
+            </h1>
+            <Input
+              type="text"
+              value={this.state.input}
+              onChange={e =>
+                this.setState({
+                  input: e.target.value,
+                  chicken: '🐔'.repeat(this.state.input.length)
+                })
+              }
+            />
+          </InputContainer>
+        </InputContainerHelpInfo>
+        <TextContainer>
+          <TextResultInfo>
+            <h2>
+              Result in chicken-language{' '}
+              <span role="img" aria-label="Pointing Right">
+                👉
+              </span>
+            </h2>
+          </TextResultInfo>
+          <TextResult>
+            <h2> {this.state.chicken}</h2>
+          </TextResult>
+        </TextContainer>
       </Container>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  main: state.main
-});
-
-const mapDispatchToProps = {
-  clickButton,
-  resetState
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Main);
+export default Main;
